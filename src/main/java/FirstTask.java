@@ -169,8 +169,7 @@ public class FirstTask {
         }
 
         private static void commentsToJsonFile(int userId, int postId, List<Comment> commentList) {
-            String jsonFile = MessageFormat.format("C:\\java\\hw13\\src\\main\\java\\user.json",
-                    userId, postId);
+            String jsonFile = MessageFormat.format("user-{0}-post-{1}-comments.json", userId, postId);
             try (Writer fileWriter = new FileWriter(jsonFile)) {
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 gson.toJson(commentList, fileWriter);
